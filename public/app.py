@@ -2,28 +2,16 @@ import os
 import json
 import sys
 from datetime import datetime
-
-from dotenv import load_dotenv
 import boto3
-# Thêm thư mục "handler" vào sys.path
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'handler')))
-print("Current working directory:", os.getcwd())
-print("Python path:", sys.path)
 
 # Import processHandler từ package handler
 from handler import processHandler
 
-print('run 5')
 
 s3_client = boto3.client('s3')
-load_dotenv('fbads-lambda/.env')
 
 
 def lambda_handler(event, context):
-    print('run')
-    # employee_data = event["Body"]
-    # employee_data_dict = json.loads(employee_data)
-    # main(employee_data_dict)
     main()
 
 
